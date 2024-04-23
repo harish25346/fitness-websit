@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> BFIT </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section class="getstartedbgimage">
+            <h1 style="text-align: center; padding: 30px 30px;background-color: brown;">CREATE AN ACCOUNT</h1><br><br><br><br><br>
+             
+            <form action="registerd.html" method="post" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        
+
+        
+
+        </section>
+        <script>
+            // JavaScript code to redirect to the new webpage (congratulations.html)
+            window.onload = function() {
+                var form = document.querySelector('form');
+                form.onsubmit = function() {
+                    window.location.href = 'registerd.html'; // Redirects to congratulations.html
+                    return false; // Prevents the form from being submitted through normal means
+                }
+            }
+            function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+        
+
+        </script>
+
+    </body>
+</html>
